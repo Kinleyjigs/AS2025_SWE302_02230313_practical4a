@@ -2,9 +2,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
   pull_request:
-    branches: ["master"]
+    branches: ["main"]
 
 jobs:
   test:
@@ -50,5 +50,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           mvn sonar:sonar \
-            -Dsonar.projectKey=${{ secrets.SONAR_ORGANIZATION }}_cicd-demo \
-            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=kinleyjigs_cicd-demo \
+            -Dsonar.organization=kinleyjigs \
+            -Dsonar.host.url=https://sonarcloud.io
